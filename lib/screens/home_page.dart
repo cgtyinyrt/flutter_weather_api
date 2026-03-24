@@ -62,7 +62,6 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        /// 📍 CITY
                         Text(
                           weather!.city,
                           style: const TextStyle(
@@ -74,13 +73,11 @@ class _HomePageState extends State<HomePage> {
 
                         const SizedBox(height: 10),
 
-                        /// 🌤 ICON
                         Image.network(
                           "https://openweathermap.org/img/wn/${weather!.icon}@2x.png",
                           width: 100,
                         ),
 
-                        /// 🌡 TEMP
                         Text(
                           "${weather!.temp.toStringAsFixed(1)}°C",
                           style: const TextStyle(
@@ -92,7 +89,6 @@ class _HomePageState extends State<HomePage> {
 
                         const SizedBox(height: 10),
 
-                        /// ☁️ DESCRIPTION
                         Text(
                           weather!.description.toUpperCase(),
                           style: const TextStyle(
@@ -104,7 +100,6 @@ class _HomePageState extends State<HomePage> {
 
                         const SizedBox(height: 20),
 
-                        /// EXTRA INFO ROW
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [

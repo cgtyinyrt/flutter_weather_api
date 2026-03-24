@@ -3,7 +3,7 @@ import 'package:flutter_weather_api/models/weather_model.dart';
 import 'package:geolocator/geolocator.dart';
 
 class WeatherService {
-  // final String apiKey = "3329b81908fe74f7310502a02bd17c7b";
+  final String apiKey = "3329b81908fe74f7310502a02bd17c7b";
 
   Future<Position> _getLocation() async {
     bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
@@ -36,7 +36,7 @@ class WeatherService {
       queryParameters: {
         "lat": lat,
         "lon": lon,
-        "appid": "3329b81908fe74f7310502a02bd17c7b",
+        "appid": apiKey,
         "units": "metric",
         "lang": "en",
       },
