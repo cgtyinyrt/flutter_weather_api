@@ -44,4 +44,31 @@ class WeatherService {
 
     return WeatherModel.fromJson(response.data);
   }
+
+  Future<WeatherModel> getWeatherByCity(String city) async {
+    final dio = Dio();
+
+    final response = await dio.get(
+      "https://api.openweathermap.org/data/2.5/weather",
+      queryParameters: {
+        "q": city,
+        "appid": apiKey,
+        "units": "metric",
+        "lang": "en",
+      },
+    );
+
+    return WeatherModel.fromJson(response.data);
+  }
+
+  Future<List<dynamic>> getForecast(String city) async {
+    final dio = Dio();
+
+    final response = await dio.get(
+      "https://api.openweathermap.org/data/2.5/forecast",
+      queryParameters: {"q": city, "appid": apiKey, "units": "metric"},
+    );
+
+    return response.data['list'];
+  }
 }
